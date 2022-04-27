@@ -1,0 +1,17 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+header {
+    text-align: center;
+}
+main{
+    min-width: 100%;
+}
+.pokedex {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 20px;
+}

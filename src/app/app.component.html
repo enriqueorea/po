@@ -1,0 +1,40 @@
+
+
+<header>
+  <h1>Pokedex</h1>
+</header>
+
+<main>
+  <div class="pokedex">
+    <div *ngFor="let pokemon of pokemos" class="card" style="width: 18rem;">
+      <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{pokemon.name}}</h5>
+        <p *ngFor="let tipo of pokemon.types" class="card-text">{{tipo.type.name}}</p>
+        <button (click)="showPokemon(pokemon.name)" data-bs-toggle="modal" data-bs-target="#pokemonModal" type="button"  class="btn btn-primary">Ver detalles</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pokemonModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="pokemon-modal">
+          <h2> {{spokemon.name}} </h2>
+          <h3>Pokedex Number:</h3>
+          <p> #{{spokemon.id}} </p>
+          <img [src]="spokemon?.sprites?.front_default" [alt]="spokemon.name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 
